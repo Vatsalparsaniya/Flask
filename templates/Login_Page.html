@@ -1,0 +1,18 @@
+<html>
+   <body>
+      <form action = "/login" method = "POST">
+         <p>Enter Name:</p>
+         <p><input type = "text" name = "nm" /></p>
+         <p><input type = "submit" value = "submit" /></p>
+         {% with messages = get_flashed_messages() %}
+            {% if meassges %}
+               {% for message in messages %}
+                <h2>{{ message }}<h2>
+               {% endfor %}
+            {% endif%}
+          {% endwith %}
+          {% block body %}{% endblock %}
+      </form>
+   </body>
+</html>
+
