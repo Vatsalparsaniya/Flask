@@ -3,6 +3,10 @@ from flask import Flask,render_template,flash,redirect,url_for,request
 app = Flask(__name__)
 app.secret_key = "!@#$%^&*"
 
+@app.errorhandler(404)
+def page_not_found(e):\
+    return '<h1>Vatsal Page not Found</h1>'
+
 @app.route('/')
 def index():
     return render_template('Login_Page.html')
